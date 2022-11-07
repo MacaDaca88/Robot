@@ -54,33 +54,7 @@ void setup() {
 void loop() {
   unsigned long currentMillis = millis();
 
-  if (currentMillis - previousMillis >= interval) {
-    // save the last time you blinked the LED
-    previousMillis = currentMillis;
-    for (pos = 0; pos <= 180; pos += 1) {
-      // in steps of 1 degree
-      myservofl.write(pos);
-     delay(15);
-    }
-  
-  for (pos = 0; pos <= 180; pos += 1) {
-    // in steps of 1 degree
-    myservorr.write(pos);
-    digitalWrite(LED_BUILTIN, 0x1);
-    delay(15);
-  }
-  for (pos = 180; pos >= 0; pos -= 1){
-    myservofr.write(pos);
-  delay(15);
-}
-for (pos = 0; pos <= 180; pos += 1){
-  // in steps of 1 degree
-  myservorl.write(pos);
-digitalWrite(LED_BUILTIN, 0x0);
-delay(15);
-}
 
-}else {
   digitalWrite(LED_BUILTIN, 0x0);
   myservorr.write(0);
   myservorl.write(180);
@@ -99,7 +73,7 @@ delay(15);
   delay(500);
   myservofr.write(0);
   myservofl.write(180);
-  delay(500);
+  delay(15000);
 
-}
+
 }
